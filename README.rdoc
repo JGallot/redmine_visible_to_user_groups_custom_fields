@@ -1,4 +1,4 @@
-= redmine_visible_to_user_groups_custom_fields
+= Redmine Visible to User Groups Custom Fields
 
 Originally, Redmine Issue Custom Fields are visible to all users or to specific roles.
 
