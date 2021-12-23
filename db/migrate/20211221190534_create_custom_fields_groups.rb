@@ -15,14 +15,12 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-Redmine::Plugin.register :redmine_visible_to_user_groups_custom_fields do
-  name 'Redmine Visible to User Groups Custom Fields plugin'
-  author 'Frederico Camara'
-  description 'This is a plugin for Redmine'
-  version '0.0.1'
-  url 'http://example.com/path/to/plugin'
-  author_url 'http://example.com/about'
+class CreateCustomFieldsGroups < ActiveRecord::Migration[5.2]
+  def change
+    create_table :custom_fields_groups, :id => false do |t|
+      t.column :custom_field_id, :integer, :null => false
+      t.column :group_id, :integer, :null => false
+    end
+    add_index :custom_fields_groups, [:custom_field_id, :group_id], :unique => true, :name => :custom_fields_groups_ids
+  end
 end
-
-require_dependency 'issue_custom_field_hook'
-require_dependency 'custom_field_groups_patches'

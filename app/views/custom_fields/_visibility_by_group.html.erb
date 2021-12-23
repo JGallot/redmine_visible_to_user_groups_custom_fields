@@ -1,0 +1,24 @@
+<div id="groups">
+  <br>
+  <fieldset class="block collapsible collapsed"><legend onclick="toggleFieldset(this);" class="icon icon-collapsed"><%= l(:label_visibility_groups) %></legend>
+    <div>
+    <% group_ids = @custom_field.group_ids %>
+    <% Group.sorted.each do |group| %>
+      <label class="block custom_field_group" style="padding-left:2em;">
+        <%= check_box_tag 'custom_field[group_ids][]', group.id, group_ids.include?(group.id), :id => nil %>
+        <%= group.name %>
+      </label>
+    <% end %>
+    <%= hidden_field_tag 'custom_field[group_ids][]', '' %>
+    </div>
+  </fieldset>
+</div>
+
+<%= javascript_tag do %>
+hideFieldset($('#groups div'));
+$(document).ready(function(){
+  $('#groups').appendTo(
+  $('legend:contains("<%= l(:field_visible) %>")').parent()
+  )
+});
+<% end %>

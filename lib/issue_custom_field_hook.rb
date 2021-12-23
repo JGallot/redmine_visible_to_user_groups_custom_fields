@@ -15,14 +15,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-Redmine::Plugin.register :redmine_visible_to_user_groups_custom_fields do
-  name 'Redmine Visible to User Groups Custom Fields plugin'
-  author 'Frederico Camara'
-  description 'This is a plugin for Redmine'
-  version '0.0.1'
-  url 'http://example.com/path/to/plugin'
-  author_url 'http://example.com/about'
+class IssueCustomFieldHook < Redmine::Hook::ViewListener
+  render_on :view_custom_fields_form_issue_custom_field, :partial => 'custom_fields/visibility_by_group'
 end
-
-require_dependency 'issue_custom_field_hook'
-require_dependency 'custom_field_groups_patches'

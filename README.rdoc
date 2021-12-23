@@ -1,3 +1,5 @@
-= redmine_restrict_cfs_by_user_cfs
+= redmine_visible_to_user_groups_custom_fields
 
-Description goes here
+Originally, Redmine Issue Custom Fields are visible to all users or to specific roles.
+
+This plugin adds the possibility to restrict the manipulation of user fields to groups, besides all or specific roles.
