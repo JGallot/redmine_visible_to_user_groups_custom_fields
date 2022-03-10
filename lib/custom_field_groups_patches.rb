@@ -47,9 +47,8 @@ module CustomFieldsGroups
       end
     end
 
-    def visible?
-      user=User.current
-      super || groups.map{|g| g.users}.flatten.include?(user)
+    def visible_by?(project, user=User.current)
+      super(project, user) || groups.map{|g| g.users}.flatten.include?(user)
     end
   end
 end
