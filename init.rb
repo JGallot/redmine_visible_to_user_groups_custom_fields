@@ -19,8 +19,8 @@ Redmine::Plugin.register :redmine_visible_to_user_groups_custom_fields do
   name 'Redmine Visible to User Groups Custom Fields plugin'
   author 'Frederico Camara'
   description 'This is a plugin for Redmine'
-  version '0.0.1'
-  url 'http://example.com/path/to/plugin'
+  version '1.0.0'
+  url 'https://github.com/fredsdc/redmine_visible_to_user_groups_custom_fields'
   author_url 'https://github.com/fredsdc'
 end
 
