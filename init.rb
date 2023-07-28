@@ -24,5 +24,6 @@ Redmine::Plugin.register :redmine_visible_to_user_groups_custom_fields do
   author_url 'https://github.com/fredsdc'
 end
 
-require_dependency 'issue_custom_field_hook'
-require_dependency 'custom_field_groups_patches'
+require File.expand_path('../lib/issue_custom_field_hook', __FILE__)
+require File.expand_path('../lib/custom_fields_groups/custom_field_patch', __FILE__)
+
